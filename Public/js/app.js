@@ -9,7 +9,7 @@ function changeColor() {
     console.log(addColor);
     addColor[0].style.color = "green";
 
-    addcolorh3[0].style.color = "blue"
+    addcolorh3[0].style.color = "red"
 
     console.log("colored green")
 

@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;\red31\green31\blue31;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c16078\c16078\c16078;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+Folder Structure Guidelines : Link to Medium\
+\
+\
+URL : https://medium.com/@abhijeetgurle/file-structure-of-node-js-and-express-application-4d9fb66c8d68\
+\
+\
+\pard\pardeftab720\sl640\partightenfactor0
+
+\f1\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The function of each of the folder is as below:-\
+1] app.js:- This file starts your web server. All your set up logic should be in this file.(In view Folder)\
+\
+\'97 Rest are Folders which we need to work\'97\'97\
+\
+2] Controllers:- This folder contains all the business logic of your application. There should be a file for each type of control. e.g. If you want to perform operations on users there should be UserController.js file. If you want analytics there should be AnalyticsController.js.\
+3] Models:- All the database models should go into the models folder. Again you should write each model into its own file. e.g. User model in UserModel.js.\
+4] Public:- All the public files such as images, javascript files, CSS files should go into this folder. You should divide your files into their own folder.\
+5] Routes:- All your routing-related logic should go into this folder. Again divide this logic into multiple files based on functionality. i.e User routing functionality should go into UserRouter.js.\
+6] Views:- So this folder contains all your views i.e. HTML/ejs files. Drop this folder if you are building rest API\'92s.\
+7] config.js:- This file should contain all your configuration e.g. PORT number, secrets, keys etc. Do not commit this file to Git.\
+}
