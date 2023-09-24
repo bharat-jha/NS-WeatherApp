@@ -38,7 +38,6 @@ address_01 = ['patna', 'bhagalpur', 'delhi', 'mumbai']
 // getGeoCode(address).then(resp1 => { console.log(resp1) }).catch(err => { console.log(err) });
 
 async function main(address = "new delhi") {
-
     try {
         const finalTemp = await getWeather(address)
 

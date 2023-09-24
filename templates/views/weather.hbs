@@ -17,9 +17,18 @@
 <body> 
     {{>header}}
     <h2>  Weather Page of {{city}}  </h2>
-    <h3> Feel Like temperature : {{feel_like}} </h3>
+    <br>
+    <h4> Feel Like temperature : {{feel_like}} </h3>
     <h4> Current Weather Conditions : {{weather}} </h3>
+    
+   <div>
+         <form id="form-2" action='/weather'  method="POST" >
+             <input  type= "text" name="city" placeholder="Enter Search Location" required><br><br>
+            <button type="submit" > Search </button>
+        </form>
+    </div>
 
+     </div>
      {{>footer}}
     <script src="/js/app.js" async defer>js script</script>
 </body>
