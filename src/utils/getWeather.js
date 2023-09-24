@@ -41,6 +41,7 @@ address_01 = ['patna', 'bhagalpur', 'delhi', 'mumbai']
 export async function main(address) {
 
     try {
+        console.log(address)
         const finalTemp = await getWeather(address)
         console.log("Current Temperature of " + colors.green(address.toString()) + " is " + d2 + " C and feel like " + feel_temp + "C");
     } catch (err) {

@@ -3,6 +3,7 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const bodyParser = require('body-parser');
 
 const { main, d2 } = require("../utils/getWeather")
 
@@ -22,6 +23,7 @@ const viewPath = path.join(__dirname, '../templates/views');
 app.set('view engine', 'hbs');
 app.set('views', viewPath)
 app.use(express.static(stat_filePath));
+app.use(bodyParser.urlencoded({ extended: true }));
 hbs.registerPartials(partials)
 
 // Creating some route for the application ... /Users/bharat.jha/Documents/Bharat/learning/nodejs/udemy_NodeJS/Bharat_Codes/Weather-app/web-server/src/app.js
@@ -45,6 +47,7 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
+    console.log(req.body)
     res.render('about', {
         title: "Weather App",
         City: "New Delhi",
@@ -53,10 +56,24 @@ app.get('/about', (req, res) => {
     })
 });
 
+
+// Define a route to handle the form submission.... check codes for the integrating 
+
+app.post('/weather', (req, res) => {
+    const city = req.body.city;
+    // Process the form data (e.g., save it to a database)
+    main(city).then((data) => {
+        console.log(data)
+        res.render('weather', { city, weather: data[0].toString(), feel_like: data[1] + "c" })
+    })
+});
+
+
 app.get('/weather', (req, res) => {
     if (!req.query.address) { return res.send({ error: " Please provide address to check for the weather" }) } else {
         city = (req.query.address).toString()
         main(city).then((data) => {
+            console.log(data)
             res.render('weather', { city, weather: data[0].toString(), feel_like: data[1] + "c" })
         })
 
